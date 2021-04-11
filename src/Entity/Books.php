@@ -43,6 +43,8 @@ class Books
      * @ORM\Column(type="date", nullable=true)
      */
     private $Date;
+	
+
 
     public function __construct()
     {
@@ -64,6 +66,10 @@ class Books
         $this->Title = $Title;
 
         return $this;
+    }
+		public function __toString()
+	{
+        return $this->Title;
     }
 
     /**
@@ -114,6 +120,7 @@ class Books
         return $this;
     }
 
+
     public function getDate(): ?\DateTimeInterface
     {
         return $this->Date;
@@ -125,4 +132,5 @@ class Books
 
         return $this;
     }
+		
 }

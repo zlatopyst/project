@@ -35,7 +35,7 @@ class Author
     private $MiddleName;
 
     /**
-     * @ORM\Column(type="date")
+     * @ORM\Column(type="date", nullable=true)
      */
     private $Birthday;
 
@@ -65,6 +65,10 @@ class Author
 
         return $this;
     }
+			public function __toString()
+	{
+        return $this->FirstName;
+    }
 
     public function getSecondName(): ?string
     {
@@ -78,6 +82,7 @@ class Author
         return $this;
     }
 
+
     public function getMiddleName(): ?string
     {
         return $this->MiddleName;
@@ -89,6 +94,7 @@ class Author
 
         return $this;
     }
+
 
     public function getBirthday(): ?\DateTimeInterface
     {
